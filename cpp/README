@@ -1,0 +1,2 @@
+# compile
+g++ $(pkg-config blitz --libs --cflags) array_blitz.cc
