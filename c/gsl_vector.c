@@ -22,8 +22,7 @@ int main ()
   T = gsl_rng_default;
   r = gsl_rng_alloc (T);
 
-  printf("Number of elements in the vector:: ");
-  scanf("%d",&n);
+  n = 10;
 
   /* Allocate the vector of the specified size*/
   gsl_vector * v = gsl_vector_alloc (n);

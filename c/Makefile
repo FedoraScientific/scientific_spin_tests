@@ -1,6 +1,3 @@
-# sample Makefile to compile and execute the 
-# C files
-
 run:	compile
 	./gsl_vector
 	./omp_demo
