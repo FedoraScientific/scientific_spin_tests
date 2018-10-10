@@ -11,6 +11,9 @@ def vagrant_init():
 
 def vagrant_up():
     print(subprocess.check_output(["vagrant", "up"]).decode("utf-8"))
+
+def vagrant_destroy():
+    print(subprocess.check_output(["vagrant", "destroy", "--force"]))
     
 
 def run_tests():
@@ -18,7 +21,8 @@ def run_tests():
         print(subprocess.check_output(["vagrant", "ssh", "--command", "bash /vagrant/run-tests.sh"], stderr=subprocess.STDOUT).decode("utf-8"))
     except subprocess.CalledProcessError as e:
         print(str(e.stdout))
-
+    else:
+        vagrant_destroy()
 
 def main():
     if len(sys.argv) != 2:
